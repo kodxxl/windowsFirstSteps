@@ -1,5 +1,4 @@
 # Initial network configuration on Windows Server Core
----
 
 First of all, we need to list all available interfaces:
 ```
@@ -47,4 +46,4 @@ Initial network configuration is done. Go to [next step](/3_DHCPandDNSConfig.md)
 [def6]: https://learn.microsoft.com/en-us/powershell/module/dnsclient/resolve-dnsname
 
 # Navigation
-[<-Previous](/1_rightAfterInstall.md)---[Next->](/3_DHCPandDNSConfig.md)
+[<-Previous](/1_rightAfterInstall.md)---[Next->](/3_domainController.md)
