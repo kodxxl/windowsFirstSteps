@@ -24,6 +24,7 @@ Test-NetConnection
 Resolve-DnsName google.com
 ```
 
+Initial network configuration is done. Go to [next step](/3_DHCPandDNSConfig.md)
 
 # Useful links
 
