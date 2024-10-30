@@ -1,7 +1,7 @@
 # First steps you need to do right after Windows Core installation
 ---
 
-Right after system restart set up new password for Administrator and then go to:
+Right after system restart, set up new password for Administrator and then go to:
 ```
 powershell
 ```
