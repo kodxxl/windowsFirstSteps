@@ -23,7 +23,10 @@ Set-DnsClientServerAddress $DNSSet
 Test-NetConnection
 Resolve-DnsName google.com
 ```
-
+Dont foreget to complete License Key activation
+```
+sconfig
+```
 Initial network configuration is done. Go to [next step](/3_DHCPandDNSConfig.md)
 
 # Useful links
