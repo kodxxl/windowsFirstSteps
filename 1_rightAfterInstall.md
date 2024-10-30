@@ -26,3 +26,6 @@ C:\Windows\System32\Sysprep\sysprep.exe
 * [Rename-Computer][def]
 
 [def]: https://learn.microsoft.com/ru-ru/powershell/module/microsoft.powershell.management/rename-computer
+
+# Navigation
+[<-Previous](/README.md)---[Next->](/2_networkConfiguration.md)

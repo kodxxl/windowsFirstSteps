@@ -45,3 +45,6 @@ Initial network configuration is done. Go to [next step](/3_DHCPandDNSConfig.md)
 [def4]: https://learn.microsoft.com/en-us/powershell/module/dnsclient/set-dnsclientserveraddress
 [def5]: https://learn.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection
 [def6]: https://learn.microsoft.com/en-us/powershell/module/dnsclient/resolve-dnsname
+
+# Navigation
+[<-Previous](/1_rightAfterInstall.md)---[Next->](/3_DHCPandDNSConfig.md)
