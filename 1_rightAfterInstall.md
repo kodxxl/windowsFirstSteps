@@ -15,6 +15,7 @@ Rename current computer with following command:
 Rename-Computer CORETEST1 -Restart
 ```
 After reboot your system is ready to further costomization
+[go to next section](/2_networkConfiguration.md)
 
 If you need prepare VM Template:
 ```
