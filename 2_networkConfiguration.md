@@ -3,15 +3,41 @@
 
 First of all, we need to ist all available interfaces:
 ```
-[Get-NetAdapter](https://learn.microsoft.com/en-us/powershell/module/netadapter/get-netadapter)
+Get-NetAdapter
 ```
-Then you get ifIndex`es of interfaces
+When you get *ifIndex*`es of interfaces configure DHCP-client:
+```
+Remove-NetRoute -Ifindex 3
+Set-NetIPInterface -Dhcp Enabled
+```
+Or static IP configuration:
+```
+Remove-NetRoute -Ifindex 3
+New-NetIPAddress -InterfaceIndex 5 -IPAddress 192.168.99.202 -PrefixLength 24 -DefaultGateway 192.168.99.1
+$DNSSet = @{
+    InterfaceIndex = 8
+    ServerAddresses = ("8.8.8.8","8.8.4.4")
+}
+Set-DnsClientServerAddress $DNSSet
+
+Test-NetConnection
+Resolve-DnsName google.com
 ```
 
-```
 
 # Useful links
 
 * [Get-NetAdapter][def]
+* [Set-NetIPInterface][def2]
+* [New-NetIPAdress][def3]
+* [Set-DnsClientServerAddress][def4]
+* [Test-NetConnection][def5]
+* [Resolve-DnsName][def6]
+* Get-Command -Module NetTCPIP
 
 [def]: https://learn.microsoft.com/en-us/powershell/module/netadapter/get-netadapter
+[def2]: https://learn.microsoft.com/en-us/powershell/module/nettcpip/set-netipinterface
+[def3]: https://learn.microsoft.com/en-us/powershell/module/nettcpip/new-netipaddress
+[def4]: https://learn.microsoft.com/en-us/powershell/module/dnsclient/set-dnsclientserveraddress
+[def5]: https://learn.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection
+[def6]: https://learn.microsoft.com/en-us/powershell/module/dnsclient/resolve-dnsname
