@@ -12,10 +12,10 @@ Set-NetIPInterface -Dhcp Enabled
 Or static IP configuration:
 ```
 Remove-NetRoute -Ifindex 3
-New-NetIPAddress -InterfaceIndex 5 -IPAddress 192.168.99.202 -PrefixLength 24 -DefaultGateway 192.168.99.1
+New-NetIPAddress -InterfaceIndex 5 -IPAddress 192.168.0.100 -PrefixLength 24 -DefaultGateway 192.168.0.1
 $DNSSet = @{
     InterfaceIndex = 8
-    ServerAddresses = ("8.8.8.8","8.8.4.4")
+    ServerAddresses = ("192.168.0.10","8.8.8.8")
 }
 Set-DnsClientServerAddress $DNSSet
 
