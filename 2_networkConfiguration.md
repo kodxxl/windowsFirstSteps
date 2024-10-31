@@ -17,7 +17,7 @@ $DNSSet = @{
     InterfaceIndex = 8
     ServerAddresses = ("192.168.0.10","8.8.8.8")
 }
-Set-DnsClientServerAddress $DNSSet
+Set-DnsClientServerAddress @DNSSet
 
 Test-NetConnection
 Resolve-DnsName google.com
