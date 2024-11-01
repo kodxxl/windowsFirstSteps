@@ -11,7 +11,7 @@ sconfig
 ```
 Rename current computer with following command:
 ```
-Rename-Computer CORETEST1 -Restart
+Rename-Computer dctest1 -Restart
 ```
 After reboot your system is ready to further costomization
 [go to next section](/2_networkConfiguration.md)
