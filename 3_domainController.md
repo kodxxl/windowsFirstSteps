@@ -84,8 +84,7 @@ Now we can create new users and add them into Team
 * [New-ADGroup](https://learn.microsoft.com/en-us/powershell/module/activedirectory/new-adgroup)
 * [Add-ADGroupMember](https://learn.microsoft.com/en-us/powershell/module/activedirectory/add-adgroupmember)
 * ```Get-Command -Module ADDSDeployment```
-* Get-Command -Module ActiveDirectory
-* 
+* ```Get-Command -Module ActiveDirectory```
 
 # Navigation
 [<-Previous](/2_networkConfiguration.md)---[Next->](/4_configureDHCPandDNS.md)

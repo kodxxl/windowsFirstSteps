@@ -42,8 +42,8 @@ Initial network configuration is done. Go to [next step](/3_DHCPandDNSConfig.md)
 * [Test-NetConnection][def5]
 * [Resolve-DnsName][def6]
 * [Disable-NetAdapterBinding][def7]
-* Get-Command -Module NetTCPIP
-* Get-Command -Module NetAdapter
+* ```Get-Command -Module NetTCPIP```
+* ```Get-Command -Module NetAdapter```
 
 [def]: https://learn.microsoft.com/en-us/powershell/module/netadapter/get-netadapter
 [def2]: https://learn.microsoft.com/en-us/powershell/module/nettcpip/set-netipinterface
