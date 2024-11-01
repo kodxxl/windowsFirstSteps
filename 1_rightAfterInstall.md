@@ -1,4 +1,4 @@
-# First steps you need to do right after Windows Server Core installation
+# First steps you need to do right after Windows Core installation
 
 Right after system restart, set up new password for Administrator and then go to:
 ```

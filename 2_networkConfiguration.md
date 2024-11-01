@@ -1,4 +1,4 @@
-# Initial network configuration on Windows Server Core
+# Initial network configuration on Windows Core
 
 First of all, we need to list all available interfaces:
 ```
