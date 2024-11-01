@@ -25,7 +25,7 @@ Install-ADDSForest @FP
 After all, restart server, and try to verify installation:
 ```
 Get-ADRootDSE
-Resolve-DNSName dctest1 -Server dctest1
+Resolve-DNSName dc1 -Server dc1
 $Env:USERNAME
 $Env:USERDNSDOMAIN
 ```
@@ -75,6 +75,8 @@ Now we can create new users and add them into Team
 
 # Useful links
 
+* ```Get-Command -Module ADDSDeployment```
+* ```Get-Command -Module ActiveDirectory```
 * [ConvertTo-SecureString](https://learn.microsoft.com/ru-ru/powershell/module/microsoft.powershell.security/convertto-securestring)
 * [Install-ADDSForest](https://learn.microsoft.com/en-us/powershell/module/addsdeployment/install-addsforest)
 * [Get-ADRootDSE](https://learn.microsoft.com/en-us/powershell/module/activedirectory/get-adrootdse)
@@ -83,8 +85,6 @@ Now we can create new users and add them into Team
 * [Get-ADUser](https://learn.microsoft.com/en-us/powershell/module/activedirectory/get-aduser)
 * [New-ADGroup](https://learn.microsoft.com/en-us/powershell/module/activedirectory/new-adgroup)
 * [Add-ADGroupMember](https://learn.microsoft.com/en-us/powershell/module/activedirectory/add-adgroupmember)
-* ```Get-Command -Module ADDSDeployment```
-* ```Get-Command -Module ActiveDirectory```
 
 # Navigation
-[<-Previous](/2_networkConfiguration.md)---[Next->](/4_configureDHCPandDNS.md)
+[<-Previous](/2_networkConfiguration.md)---[Next->](/4_configureDHCP.md)
