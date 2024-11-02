@@ -2,14 +2,13 @@
 
 First of all we need to install ADDS feature, and tools
 ```
-Install-WindowsFeature AD-Domain-Service -IncludeManagementTools
+Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 ```
 Before installing a domain forrest, you need to decide on some parameters:
 ```
 $PTPass = @{
     String = 'Pa$$w0rd'
     AsPlainText = $true
-    Force = $true
 }
 $SPass = ConvertTo-SecureString @PTPass
 $FP = @{
@@ -55,6 +54,8 @@ $User.Name = 'User One'
 $User.DisplayName = 'User One (IT dept.)'
 
 New-ADUser @User
+
+Set-AdUser -identity user -replace @{ExtensionAttribute1="newValue"}
 ```
 Move new user into Domain Administrators group
 ``
@@ -72,6 +73,23 @@ $UG.GroupScope = 'DomainLocal'
 New-ADGroup @UG
 ```
 Now we can create new users and add them into Team
+
+# Install secondary DC
+
+Prepare server to be secondary DC and set it`s DNS client server address to DC1 then:
+```
+Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
+
+$SPass = ConvertTo-SecureString @{
+    String = 'Pa$$w0rd'
+    AsPlainText = $true
+}
+Install-ADDSDomainController @{
+ InstallDns = $true 
+ DomainName = 'test.local'
+ SafeModeAdministratorPassword = $SPass
+}
+```
 
 # Useful links
 
