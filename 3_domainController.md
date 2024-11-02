@@ -79,6 +79,10 @@ Now we can create new users and add them into Team
 Prepare server to be secondary DC and set it`s DNS client server address to DC1 then:
 ```
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
+```
+Enter credentials of test.local\Administrator into $cred variable
+```
+$cred = Get-Credentials
 
 $SPass = ConvertTo-SecureString @{
     String = 'Pa$$w0rd'
@@ -88,14 +92,19 @@ Install-ADDSDomainController @{
  InstallDns = $true 
  DomainName = 'test.local'
  SafeModeAdministratorPassword = $SPass
+ Credentials = $cred
 }
+```
+Reboot secondary DC2, and get list of all domain controllers:
+```
+Get-ADDomainController -filter * | Select-Object name
 ```
 
 # Useful links
 
 * ```Get-Command -Module ADDSDeployment```
 * ```Get-Command -Module ActiveDirectory```
-* [ConvertTo-SecureString](https://learn.microsoft.com/ru-ru/powershell/module/microsoft.powershell.security/convertto-securestring)
+* [Install-ADDSDomainController](https://learn.microsoft.com/en-us/powershell/module/addsdeployment/install-addsdomaincontroller)
 * [Install-ADDSForest](https://learn.microsoft.com/en-us/powershell/module/addsdeployment/install-addsforest)
 * [Get-ADRootDSE](https://learn.microsoft.com/en-us/powershell/module/activedirectory/get-adrootdse)
 * [New-ADOrganizationalUnit](https://learn.microsoft.com/en-us/powershell/module/activedirectory/new-adorganizationalunit)
@@ -103,6 +112,7 @@ Install-ADDSDomainController @{
 * [Get-ADUser](https://learn.microsoft.com/en-us/powershell/module/activedirectory/get-aduser)
 * [New-ADGroup](https://learn.microsoft.com/en-us/powershell/module/activedirectory/new-adgroup)
 * [Add-ADGroupMember](https://learn.microsoft.com/en-us/powershell/module/activedirectory/add-adgroupmember)
+* [ConvertTo-SecureString](https://learn.microsoft.com/ru-ru/powershell/module/microsoft.powershell.security/convertto-securestring)
 
 # Navigation
 [<-Previous](/2_networkConfiguration.md)---[Next->](/4_configureDHCP.md)
